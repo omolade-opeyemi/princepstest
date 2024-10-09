@@ -1,0 +1,33 @@
+
+.addNew{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card{
+    border: 2px solid;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    .toprow{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+}
+li{
+    cursor: pointer;
+}
+.tableOptions{
+    padding: 1rem 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    
+    .otherOptions{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+    }
+}

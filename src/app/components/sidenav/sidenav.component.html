@@ -1,0 +1,25 @@
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed':''">
+    <div class="logo-container">
+        <button class="logo" (click)="toggleCollapse()"><mat-icon aria-hidden="false">menu</mat-icon>
+        </button>
+        <div class="logo-text" *ngIf="collapsed">Princeps Finance</div>
+        <button class="btn-close btn-danger" *ngIf="collapsed" (click)="closeSidenav()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <hr>
+    <ul class="sidenav-nav">
+        
+        <li class="sidenav-nav-item" *ngFor="let data of navData">
+            <a class="sidenav-nav-link" [matTooltip]="data.tooltip"
+             matTooltipPosition=right
+            matTooltipClass="wizard" aria-label="Button that shows a red tooltip"
+             [routerLink]="[data.routerLink]" routerLinkActive="active" #rla="routerLinkActive" [routerLinkActiveOptions]="{exact:true}">
+                <mat-icon  fontSet="{{ rla.isActive ? '' : 'material-icons-outlined'}}" [ngClass]="{'active-sidenav-link-icon':rla.isActive}" class="sidenav-link-icon" aria-hidden="false">{{data.icon}}</mat-icon>
+                <span [ngClass]="{'active-sidenav-link-text':rla.isActive}" class="sidenav-link-text" *ngIf="collapsed">{{data.label}}</span>
+            </a>
+        </li>
+        
+    </ul>
+    
+</div>
+
+
